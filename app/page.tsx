@@ -279,7 +279,7 @@ const LandingPage = () => {
       <section className="flex flex-col items-center w-full">
             <h2 className="w-full text-center mb-6 mt-4 text-2xl">Se inscreva na nossa newsletter</h2>
             <Image className="rounded-lg" width={414} height={111.31} src="/papers.png" alt="paper" />
-            <p className="font-sans font-thin my-6 text-center px-12">Tenha acesso à "Sabedoria Semanal" para ajudar você a crescer e se desenvolver ao longo de sua jornada.</p>
+            <p className="font-sans font-thin my-6 text-center px-12">Tenha acesso à Sabedoria Semanal para ajudar você a crescer e se desenvolver ao longo de sua jornada.</p>
             <form className="flex flex-col items-center px-4 w-full" action="">
               <input type="email" placeholder="Digite seu e-mail" className="bg-black border-[0.1em] border-[rgb(90,90,103)] w-full h-10 rounded-lg px-4" />
               <button className="bg-[#3c3c3a] text-white py-3 px-4 rounded-3xl mt-4">Inscrever-se</button>
