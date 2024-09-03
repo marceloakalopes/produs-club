@@ -1,27 +1,30 @@
-'use client';
+"use client";
 
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import Image from "next/image";
 import VideoPlayer from "./components/VideoPlayer";
 
 const LandingPage = () => {
-
   const offerRef = useRef<HTMLDivElement>(null);
 
   const scrollToOffer = () => {
     if (offerRef.current) {
       const elementPosition = offerRef.current.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - (window.innerHeight / 2) + (offerRef.current.offsetHeight / 2);
+      const offsetPosition =
+        elementPosition +
+        window.pageYOffset -
+        window.innerHeight / 2 +
+        offerRef.current.offsetHeight / 2;
 
       window.scrollTo({
         top: offsetPosition,
-        behavior: 'smooth',
+        behavior: "smooth",
       });
     }
   };
 
   return (
-    <div className="flex flex-col items-center p-2 max-w-screen">
+    <div className="block p-2 max-w-screen bg-black">
       <section className="flex flex-col items-center w-full">
         <div className="flex justify-center w-full bg-white py-2 rounded">
           <h2 className="text-black font-extrabold text-lg">PRODUS</h2>
@@ -100,10 +103,13 @@ const LandingPage = () => {
         </ul>
 
         <div className="h-[1px] bg-gray-400 w-56"></div>
-
       </section>
 
-      <section id="offer" ref={offerRef} className="flex flex-col items-start w-full py-12 mb-10">
+      <section
+        id="offer"
+        ref={offerRef}
+        className="flex flex-col items-start w-full py-12 mb-10"
+      >
         <div className="px-8 bg-[#141414] w-full py-8 rounded-2xl">
           <div>
             <h6 className="border rounded-xl py-1 px-2 text-xs w-fit">
@@ -163,7 +169,7 @@ const LandingPage = () => {
                   clipRule="evenodd"
                 />
               </svg>
-              <h4>Livros selecionados</h4>
+              <h4>Review de Livros</h4>
             </div>
 
             <div className="flex gap-2 items-center font-sans font-thin text-sm">
@@ -180,7 +186,7 @@ const LandingPage = () => {
                   clipRule="evenodd"
                 />
               </svg>
-              <h4>Sabedoria & Insights</h4>
+              <h4>Insights</h4>
             </div>
 
             <div className="flex gap-2 items-center font-sans font-thin text-sm">
@@ -197,7 +203,7 @@ const LandingPage = () => {
                   clipRule="evenodd"
                 />
               </svg>
-              <h4>Comunidade Privada</h4>
+              <h4>Comunidade</h4>
             </div>
 
             <div className="flex gap-2 items-center font-sans font-thin text-sm">
@@ -269,13 +275,30 @@ const LandingPage = () => {
       </section>
 
       <section className="flex flex-col items-center w-full">
-            <h2 className="w-full text-center mb-6 mt-4 text-2xl">Se inscreva na nossa newsletter</h2>
-            <Image className="rounded-lg" width={414} height={111.31} src="/papers.png" alt="paper" />
-            <p className="font-sans font-thin my-6 text-center px-12">Tenha acesso à Sabedoria Semanal para ajudar você a crescer e se desenvolver ao longo de sua jornada.</p>
-            <form className="flex flex-col items-center px-4 w-full" action="">
-              <input type="email" placeholder="Digite seu e-mail" className="bg-black border-[0.1em] border-[rgb(90,90,103)] w-full h-10 rounded-lg px-4" />
-              <button className="bg-[#3c3c3a] text-white py-3 px-4 rounded-3xl mt-4">Inscrever-se</button>
-            </form>
+        <h2 className="w-full text-center mb-6 mt-4 text-2xl">
+          Se inscreva na nossa newsletter
+        </h2>
+        <Image
+          className="rounded-lg"
+          width={414}
+          height={111.31}
+          src="/papers.png"
+          alt="paper"
+        />
+        <p className="font-sans font-thin my-6 text-center px-12">
+          Tenha acesso à Sabedoria Semanal para ajudar você a crescer e se
+          desenvolver ao longo de sua jornada.
+        </p>
+        <form className="flex flex-col items-center px-4 w-full" action="">
+          <input
+            type="email"
+            placeholder="Digite seu e-mail"
+            className="bg-black border-[0.1em] border-[rgb(90,90,103)] w-full h-10 rounded-lg px-4"
+          />
+          <button className="bg-[#3c3c3a] text-white py-3 px-4 rounded-3xl mt-4">
+            Inscrever-se
+          </button>
+        </form>
       </section>
 
       <footer className="mt-24">

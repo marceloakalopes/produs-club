@@ -1,47 +1,70 @@
 "use client";
 
-import { useEffect, useState } from 'react';
-import ReactPlayer from 'react-player';
+import { useEffect, useRef, useState } from "react";
 
 const VideoPlayer = () => {
-  const [isMounted, setIsMounted] = useState(false);
-  const [playVideo, setPlayVideo] = useState(false);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [showPlayButton, setShowPlayButton] = useState(false);
 
   useEffect(() => {
-    setIsMounted(true); // Ensure the component is mounted
-
     const timer = setTimeout(() => {
-      setPlayVideo(true);
-    }, 1000); // 1000ms = 1 second delay
+      if (videoRef.current) {
+        videoRef.current.muted = true;
+        videoRef.current
+          .play()
+          .then(() => {
+            setIsPlaying(true);
+          })
+          .catch(() => {
+            setShowPlayButton(true); // Show play button if autoplay fails
+          });
+      }
+    }, 1000); // 1-second delay
 
-    return () => clearTimeout(timer); // Clean up the timer on unmount
+    return () => clearTimeout(timer);
   }, []);
 
-  if (!isMounted) {
-    return null; // Render nothing on the server
-  }
+  const handlePlay = () => {
+    if (videoRef.current) {
+      videoRef.current.play().then(() => {
+        setIsPlaying(true);
+        setShowPlayButton(false);
+      });
+    }
+  };
 
   return (
     <div
-      className="player-wrapper"
-      style={{
-        backgroundColor: playVideo ? 'transparent' : 'black',
-        width: '100%',
-        height: '100%',
-      }}
+      className="relative w-full h-full"
+      style={{ backgroundColor: isPlaying ? "transparent" : "black" }}
     >
-      {playVideo && (
-        <ReactPlayer
-          url="/main.mp4"
-          className="react-player"
-          playing
-          loop
-          muted
-          width="100%"
-          height="100%"
-          playsinline
-          controls={false} // Hide default controls if not needed
-        />
+      <video
+        ref={videoRef}
+        className="w-full h-auto"
+        loop
+        muted
+        playsInline
+        controls={false}
+      >
+        <source src="/main.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      {showPlayButton && (
+        <button
+          onClick={handlePlay}
+          className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50"
+          style={{
+            color: "white",
+            fontSize: "20px",
+            padding: "10px 20px",
+            borderRadius: "5px",
+            cursor: "pointer",
+          }}
+        >
+          Play
+        </button>
       )}
     </div>
   );
