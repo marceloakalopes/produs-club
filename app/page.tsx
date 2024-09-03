@@ -2,23 +2,11 @@
 
 import { useRef, useEffect } from "react";
 import Image from "next/image";
+import VideoPlayer from "./components/VideoPlayer";
 
 const LandingPage = () => {
 
   const offerRef = useRef<HTMLDivElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (video) {
-      setTimeout(() => {
-        video.muted = true;
-        video.play().catch(error => {
-          console.log("Autoplay was prevented:", error);
-        });
-      }, 100);
-    }
-  }, []);
 
   const scrollToOffer = () => {
     if (offerRef.current) {
@@ -39,18 +27,7 @@ const LandingPage = () => {
           <h2 className="text-black font-extrabold text-lg">PRODUS</h2>
         </div>
         <div>
-          <video
-            ref={videoRef}
-            className="flex justify-center max-w-96"
-            playsInline
-            loop={true}
-            autoPlay={true}
-            muted={true}
-            preload="auto"
-            tabIndex={-1}
-          >
-            <source src="/main.mp4" type="video/mp4" />
-          </video>
+          <VideoPlayer />
           <div className="relative -top-28 flex flex-col items-center text-center gap-3">
             <h1 className="font-medium text-3xl tracking-wide">PRODUS CLUB</h1>
             <p className="font-sans font-thin text-base">
