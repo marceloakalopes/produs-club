@@ -31,7 +31,7 @@ const LandingPage = () => {
   };
 
   return (
-    <div className="flex flex-col items-center p-2 w-full">
+    <div className="flex flex-col items-center p-2 w-screen">
       <section className="flex flex-col items-center w-full">
         <div className="flex justify-center w-full bg-white py-2 rounded">
           <h2 className="text-black font-extrabold text-lg">PRODUS</h2>
@@ -41,9 +41,9 @@ const LandingPage = () => {
             ref={videoRef}
             className="flex justify-center max-w-96"
             playsInline
-            loop
-            autoPlay
-            muted
+            loop={true}
+            autoPlay={true}
+            muted={true}
             preload="auto"
             tabIndex={-1}
           >
