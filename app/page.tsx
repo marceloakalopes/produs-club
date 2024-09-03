@@ -1,11 +1,22 @@
 'use client';
 
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import Image from "next/image";
 
 const LandingPage = () => {
 
   const offerRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      video.muted = true; // Ensure the video is muted
+      video.play().catch(error => {
+        console.log("Autoplay was prevented:", error);
+      });
+    }
+  }, []);
 
   const scrollToOffer = () => {
     if (offerRef.current) {
@@ -27,11 +38,13 @@ const LandingPage = () => {
         </div>
         <div>
           <video
+            ref={videoRef}
             className="flex justify-center max-w-96"
             playsInline
             loop
             autoPlay
             muted
+            preload="auto"
             tabIndex={-1}
           >
             <source src="/main.mp4" type="video/mp4" />
