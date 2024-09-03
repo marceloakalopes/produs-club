@@ -126,8 +126,9 @@ const LandingPage = () => {
                 className="w-5 h-5 text-gray-800 dark:text-white"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
+                fill="white"
                 viewBox="0 0 24 24"
+
               >
                 <path
                   fillRule="evenodd"
@@ -143,7 +144,7 @@ const LandingPage = () => {
                 className="w-5 h-5 text-gray-800 dark:text-white"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
+                fill="white"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -160,7 +161,7 @@ const LandingPage = () => {
                 className="w-5 h-5 text-gray-800 dark:text-white"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
+                fill="white"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -177,7 +178,7 @@ const LandingPage = () => {
                 className="w-5 h-5 text-gray-800 dark:text-white"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
+                fill="white"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -194,7 +195,7 @@ const LandingPage = () => {
                 className="w-5 h-5 text-gray-800 dark:text-white"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
+                fill="white"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -211,7 +212,7 @@ const LandingPage = () => {
                 className="w-5 h-5 text-gray-800 dark:text-white"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
+                fill="white"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -228,7 +229,7 @@ const LandingPage = () => {
                 className="w-5 h-5 text-gray-800 dark:text-white"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
+                fill="white"
                 viewBox="0 0 24 24"
               >
                 <path
