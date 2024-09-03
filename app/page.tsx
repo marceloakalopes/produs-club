@@ -11,10 +11,12 @@ const LandingPage = () => {
   useEffect(() => {
     const video = videoRef.current;
     if (video) {
-      video.muted = true; // Ensure the video is muted
-      video.play().catch(error => {
-        console.log("Autoplay was prevented:", error);
-      });
+      setTimeout(() => {
+        video.muted = true;
+        video.play().catch(error => {
+          console.log("Autoplay was prevented:", error);
+        });
+      }, 100);
     }
   }, []);
 
@@ -31,7 +33,7 @@ const LandingPage = () => {
   };
 
   return (
-    <div className="flex flex-col items-center p-2 w-screen">
+    <div className="flex flex-col items-center p-2 max-w-screen">
       <section className="flex flex-col items-center w-full">
         <div className="flex justify-center w-full bg-white py-2 rounded">
           <h2 className="text-black font-extrabold text-lg">PRODUS</h2>
