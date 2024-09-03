@@ -24,7 +24,7 @@ const LandingPage = () => {
   };
 
   return (
-    <div className="block p-2 max-w-screen bg-black">
+    <div className="block p-2 max-w-screen bg-black text-white">
       <section className="flex flex-col items-center w-full">
         <div className="flex justify-center w-full bg-white py-2 rounded">
           <h2 className="text-black font-extrabold text-lg">PRODUS</h2>
